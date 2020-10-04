@@ -1,7 +1,7 @@
 let sequencia = "";
 
 function enter() {
-    axios.get(`http:localhost:3000/${sequencia}`).then((resposta)=>{console.log(resposta)});
+    axios.get(`http:localhost:3000/${sequencia}`).then((resposta)=>{alert(resposta.data)});
 }
 
 function clicar(numero) {
