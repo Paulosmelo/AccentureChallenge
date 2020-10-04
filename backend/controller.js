@@ -1,7 +1,3 @@
-const express = require('express')
-const app = express()
-const port = 3000
-
 function listener(elem, cont){
   let pos = parseInt(elem);
   cont--;
@@ -16,7 +12,7 @@ function getFrase(palavra){
   var acumulador = 0
   var posicao = "", aux = "", fraseOut = "";
 
-  var sequence = palavra.split("-");
+  var sequence = palavra.split(" ");
   for (let j = 0; j < sequence.length; j++) {
     for (let i = 0; i < sequence[j].length; i++) {
       posicao = sequence[j][i];
@@ -37,11 +33,5 @@ function getFrase(palavra){
 }
 
 
-app.get('/:sequencia', (req, res) => {
-  console.log(req.params.sequencia)
-  res.send(getFrase(req.params.sequencia))
-})
+console.log(getFrase("2 222 222 33 66 8 88 777 33"));
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
